@@ -1,0 +1,77 @@
+/* FUNNY EMOJI RAIN BACKGROUND */
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "😂 🤣 😜 😆 😹 🤡 😝 😁 🙃 🤪 😛 😂 🤣";
+    position: absolute;
+    top: -10%;
+    left: 0;
+    right: 0;
+    font-size: 60px;
+    opacity: 0.15;
+    white-space: nowrap;
+    animation: float 12s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+
+/* MAIN CONTAINER */
+.container {
+    background: #ffffffcc;
+    padding: 30px;
+    width: 350px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+    margin: auto;
+    top: 80px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#setup {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#punchline {
+    margin-top: 10px;
+    color: #444;
+}
+
+/* BUTTON */
+button {
+    background: #ff6f00;
+    border: none;
+    padding: 12px 25px;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #ff8800;
+}
+
+button:disabled {
+    background: #ffc266;
+    cursor: not-allowed;
+}
