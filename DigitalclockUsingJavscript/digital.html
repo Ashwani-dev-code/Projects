@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="digitalclock.css">
+</head>
+
+<body>
+    <div class="hero">
+        <div class="container">
+            <div class="clock">
+                <span id="hours" data-text="Hours">00</span>
+                <span class="colon">:</span>
+                <span id="minutes" data-text="Minutes">00</span>
+                <span class="colon">:</span>
+                <span id="seconds" data-text="Seconds">00</span>
+                <span id="ampm" data-text="AM/PM"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function updateClock() {
+            let now = new Date();
+
+            let h = now.getHours();
+            let m = now.getMinutes();
+            let s = now.getSeconds();
+            let ampm = h >= 12 ? "PM" : "AM";
+
+            // Convert 24-hour to 12-hour format
+            h = h % 12;
+            h = h ? h : 12;
+
+            // Add leading zero
+            h = h < 10 ? "0" + h : h;
+            m = m < 10 ? "0" + m : m;
+            s = s < 10 ? "0" + s : s;
+
+            // Set values
+            document.getElementById("hours").innerText = h;
+            document.getElementById("minutes").innerText = m;
+            document.getElementById("seconds").innerText = s;
+            document.getElementById("ampm").innerText = ampm;
+        }
+
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+
+</body>
+</html>
